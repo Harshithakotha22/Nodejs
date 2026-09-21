@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Welcome to ACE e-Books Website</title>
+<script language="javascript">
+function validate()
+{
+    //username validation
+    var uname=f1.username.value;
+    if(uname.Length<=0)
+    {
+        alert("Please Enter username");
+        f1.username.focus();
+        return false;
+    }
+    if(uname.length<8)
+    {
+        alert("Please Enter username not less than 8");
+        f1.username.focus;
+        return false;
+    }
+    //Password validation
+    var pwd=f1.password.value;
+    if(pwd.length<=0)
+    {
+        alert("Please Enter password");
+        f1.password.focus();
+        return false;
+    }
+    if(pwd.length<6)
+    {
+        alert("Please Enter password not less than 6");
+        f1.password.focus();
+        return false;
+    }
+    //Email validation
+    var email=f1.email.value;
+    if(email.length<=0)
+    {
+        alert("Please Enter email");
+        f1.email.focus();
+        return false;
+    }
+    else {
+        let eflag=false;
+        for(i=0;i<email.length;i++)
+    {
+        if(email.charAt(i)=="@")
+    {
+        eflag=true;
+    }
+    }
+    if(!(eflag))
+    {
+        alert("Please Enter a valid Email ID");
+        f1.email.focus();
+        return false;
+    }
+    }
+    //Phone number vallidation
+    var phno=f1.phno.value;
+    if(phno.length<=0)
+    {
+        alert("Please Enter phone n.o");
+        f1.phno.focus();
+        return false;
+    }
+    if(isNaN(phno))
+    {
+        alert("Please Enter valid phone number");
+        f1.phno.focus();
+        return false;
+    }
+    //Gender validation
+    let flag=false;
+    for(i=0;i<f1.gen.length;i++)
+    if(f1.gen[i].checked)
+    flaf=true;if(!(flag))
+{
+    alert("Please choose a Gender");
+    return false;
+}
+//Language validation
+flag=false;
+for(i=0;i<f1.lang.length;i++)
+if(f1.lang[i].checked)
+flag=true;
+if(!(flag))
+{
+    alert("Please select atleast onr of the lang options.");
+    return false;
+}
+//Address validation
+var add=f1.address.value;
+if(addr.length<=0)
+{
+    alert("Please Enter Address");
+    f1.address.focus();
+    return false;
+}
+//To display success message
+alert("Registration successful");
+}
+</script>
+</head>
+<body>
+    <center><br>
+      <h3>Registration form</h3>
+      <br/>
+      <form name="f1">
+        <table cellpadding="1" align="center">
+            <tr><td>user name:*</td>
+            <td><input type="text"name="username"></td></tr>
+            <tr><td>Password:*</td>
+            <td><input type="text"name="phno"></td></tr>
+            <tr><td valign="top">Gender:*</td>
+            <td><input type="radio"name="gender"value="male">male & nbsp;&nbsp;
+                <input type="radio"name="gender"value="female">female</td></tr>
+                <tr><td valign="top">Language known:*</td>
+                <td><input type="checkbox"name="lang"value="English">English<br/>
+                <input type="checkbox"name="lang"value="Telugu">Telugu<br/>
+                <input type="checkbox"name="lang"value="Hindi">Hindi<br/>
+                <input type="checkbox"name="lang"value="Tamil">Tamil</td></tr>
+                <tr><td valign="top">Address:*</td>
+                <td><textarea name="address"></textarea></td></tr>
+                <tr><td></td><td><input type="button"value="SUBMIT"hspace="10" onclick="validate()">
+                <input type="RESET"value="RESET"></td></tr>
+                <tr><td colspan=2>*<font color="#ff0000">fields are mandatory</font></td></tr>
+        </table>
+      </form>  
+    </center>
+</body>
+</html>
